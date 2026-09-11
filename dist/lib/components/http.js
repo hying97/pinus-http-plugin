@@ -47,7 +47,11 @@ var PinusHttp = /** @class */ (function () {
         this.http.set('port', this.port);
         this.http.set('host', this.host);
         this.http.use(this.createExpressLogger(this.logger));
-        this.http.use(bodyParser());
+        this.http.use(bodyParser.json({
+            verify: function (req, res, buf) {
+                req.rawBody = buf;
+            }
+        }));
         this.http.use(express.urlencoded());
         this.http.use(express.json());
         this.http.use(methodOverride());
