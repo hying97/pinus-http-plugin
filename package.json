@@ -6,7 +6,7 @@
   "types": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node_modules/.bin/tsc"
+    "build": "tsc"
   },
   "keywords": [
     "pinus",
@@ -27,5 +27,8 @@
     "method-override": "^3.0.0",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
   }
 }
